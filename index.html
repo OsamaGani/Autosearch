@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="autosearch.css">
+    <title>Auto Search</title>
+</head>
+
+<body>
+    <h1 class="heading">Search to type</h1>
+    <div class="search-box">
+        <input type="search" placeholder="Search For Image" id="search" oninput="osm()">
+    </div>
+    <div class="boxes">
+        <div class="box" data-name="Fort">
+            <img src="fort.avif" alt="fort img">
+            <span class="name">Fort</span>
+        </div>
+        <div class="box" data-name="Tajmahal">
+            <img src="agra.avif" alt="">
+            <span class="name">Tajmahal</span>
+        </div>
+        <div class="box" data-name="Chicken roast">
+            <img src="chicken.avif" alt="">
+            <span class="name">Chicken roast</span>
+        </div>
+        <div class="box" data-name="Lion king">
+            <img src="lion.avif" alt="">
+            <span class="name">Lion king</span>
+        </div>
+        <div class="box" data-name="Kingfisher">
+            <img src="kingfisther.avif" alt="">
+            <span class="name">Kingfisher</span>
+        </div>
+        <div class="box" data-name="Run machine">
+            <img src="virat.jpg" alt="">
+            <span class="name">Run machine</span>
+        </div>
+        <div class="box" data-name="London">
+            <img src="london.avif" alt="">
+            <span class="name">London</span>
+        </div>
+        <div class="box" data-name="parrot">
+            <img src="parrot1.avif" alt="">
+            <span class="name">parrot</span>
+        </div>
+        <div class="box" data-name="Developer">
+            <img src="developer.avif" alt="">
+            <span class="name">Developer</span>
+        </div>
+        <div class="box" data-name="Nature">
+            <img src="nature.avif" alt="">
+            <span class="name">Nature</span>
+        </div>
+        <div class="box" data-name="Testy food">
+            <img src="food.avif" alt="">
+            <span class="name">Testy food</span>
+        </div>
+        <div class="box" data-name="Pizza">
+            <img src="pizza.avif" alt="">
+            <span class="name">Pizza</span>
+        </div>
+    </div>
+    <footer>
+        <span>Copyright &copy; 2023 || Developed and created by <a href="tel:918957417685" class="osama">Usama</a>
+            Developer</span>
+    </footer>
+</body>
+<script>
+    const searchInput = document.getElementById('search');
+    const itemsList = document.querySelectorAll('.box');
+    function osm() {
+        const searchTerm = searchInput.value.toLowerCase();
+        for (let i = 0; i < itemsList.length; i++) {
+            const itemName = itemsList[i].getAttribute('data-name').toLowerCase();
+            if (itemName.includes(searchTerm)) {
+                itemsList[i].style.display = 'block';
+            } else {
+                itemsList[i].style.display = 'none';
+            }
+        }
+    }
+</script>
+
+
+</html>
